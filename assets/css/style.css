@@ -6,6 +6,25 @@
     --grayscale-body: #4E4B66;
 }
 
+::-webkit-scrollbar {
+    background-color: #fff;
+    width: .7rem;
+}
+
+::-webkit-scrollbar-track {
+    background: #fff;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #5F2EEA;
+    height: 4rem;
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #2A00A2;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -54,7 +73,7 @@ img {
     transition: all .3s linear;
 }
 
-.btn:hover{
+.btn:hover {
     color: #fff;
     background: var(--primary-default);
 }
@@ -257,10 +276,12 @@ img {
     color: var(--primary-default);
     border: 1px solid var(--primary-default);
 }
-.home__container .home__content .buttons button:last-child:hover{
+
+.home__container .home__content .buttons button:last-child:hover {
     background: var(--primary-default);
     color: #f7f7fc;
 }
+
 .cards__container {
     border: 1px solid #D9DBE9;
     grid-template-columns: 1fr;
@@ -823,11 +844,41 @@ img:hover {
         padding-block: 25px;
         padding-left: 10.5rem;
     }
+
     .nav__padding-left {
         padding-left: 10.5rem;
     }
 
     .nav__title i {
         left: 130px;
+    }
+
+    .tool__container .tool__head .tool__texts,
+    .places__container .places__head .places__texts {
+        width: 40%;
+        font-size: 1rem;
+    }
+
+
+}
+
+@media screen and (min-width: 1352px) {
+    .places__slider {
+        height: 550px;
+        width: 100%;
+    }
+
+    .place__track {
+        width: calc(500px * 10);
+    }
+
+    .place__track div {
+        width: 500px;
+        height: 550px;
+        perspective: 250px;
+    }
+
+    .cards__container {
+        column-gap: 3rem;
     }
 }
