@@ -15,14 +15,14 @@
 }
 
 .container {
-    max-width: 1170px;
+    max-width: 1120px;
     margin-inline: 1.5rem;
 }
 
-input,
 button {
     border: none;
     outline: none;
+    cursor: pointer;
 }
 
 .grid {
@@ -51,9 +51,13 @@ img {
     background: transparent;
     padding: 1rem 2rem;
     border-radius: 50px;
+    transition: all .3s linear;
 }
 
-
+.btn:hover{
+    color: #fff;
+    background: var(--primary-default);
+}
 
 .header {
     position: fixed;
@@ -253,7 +257,10 @@ img {
     color: var(--primary-default);
     border: 1px solid var(--primary-default);
 }
-
+.home__container .home__content .buttons button:last-child:hover{
+    background: var(--primary-default);
+    color: #f7f7fc;
+}
 .cards__container {
     border: 1px solid #D9DBE9;
     grid-template-columns: 1fr;
@@ -464,15 +471,18 @@ img {
     width: 15%;
     z-index: 1;
 }
-.places__slider::before{
+
+.places__slider::before {
     left: 0;
     top: 0;
 }
-.places__slider::after{
+
+.places__slider::after {
     right: -1px;
     top: 0;
     transform: rotateZ(180deg);
 }
+
 img:hover {
     transform: translateZ(20px);
 }
@@ -489,4 +499,335 @@ img:hover {
 
 #review {
     height: 20vh;
+}
+
+@media screen and (max-width: 340px) {
+    .container {
+        margin-inline: 1rem;
+    }
+
+    .nav .nav__logo {
+        font-size: 1.7rem;
+    }
+
+    .nav .nav__toggle {
+        font-size: 1.7rem;
+    }
+
+    .home__container .home__content .home__title {
+        font-size: 2.2rem;
+    }
+
+    .cards__container .card {
+        padding: 3rem;
+        row-gap: .4rem;
+    }
+
+    .cards__container .card .card__number {
+        font-size: 1.5rem;
+    }
+
+    .tool__container .tool__head .tool__title,
+    .places__container .places__head .places__title {
+        font-size: 1.5rem;
+    }
+
+
+    .tool__container .tool__head .tool__texts,
+    .places__container .places__head .places__texts {
+        font-size: .9rem;
+    }
+
+    .tool__container .tool__cards .card {
+        padding: 30px;
+    }
+
+    .tool__container .tool__cards .card p {
+        margin-block: 7px 25px;
+        font-size: .8rem;
+        line-height: 1.4;
+    }
+
+
+    .btn {
+        color: var(--primary-default);
+        font-size: .8rem;
+        font-weight: 600;
+        line-height: 1.5;
+        letter-spacing: 0.75px;
+        background: transparent;
+        padding: .8rem 1.6rem;
+        border-radius: 50px;
+    }
+
+    .places__slider {
+        height: 200px;
+        width: 100%;
+    }
+
+    .place__track {
+        width: calc(200px * 10);
+    }
+
+    .place__track div {
+        width: 200px;
+        height: 200px;
+        perspective: 250px;
+    }
+}
+
+@media screen and (min-width: 576px) {
+    .home__container .home__content .home__title {
+        text-align: center;
+    }
+
+    .home__container .home__content .buttons {
+        flex-direction: row;
+        column-gap: 1.5rem;
+        margin-inline: auto;
+    }
+
+    .btn {
+        padding: 1rem 3rem;
+    }
+
+    .cards__container .card {
+        padding: 4rem;
+    }
+
+    .cards__container .card .card__img {
+        left: -45px;
+    }
+
+    .cards__container .card .card__texts {
+        font-size: 1rem;
+    }
+
+    .tool__container .tool__cards {
+        grid-template-columns: 1fr 1fr;
+        column-gap: 1.5rem;
+    }
+
+    .tool__container .tool__cards .card {
+        padding: 20px;
+    }
+
+    .places__slider {
+        height: 250px;
+        width: 100%;
+    }
+
+    .place__track {
+        width: calc(300px * 10);
+    }
+
+    .place__track div {
+        width: 300px;
+        height: 250px;
+        perspective: 250px;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .cards__container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .home__container {
+        padding-block: 5rem;
+    }
+
+    .cards__container .card {
+        padding: 3rem;
+        padding-left: 4rem;
+    }
+
+    .cards__container .card:nth-child(2) {
+        border-top: none;
+        border-bottom: 1px solid #D9DBE9;
+    }
+
+    .cards__container .card:nth-child(1) {
+        border-right: 1px solid #D9DBE9;
+        border-bottom: 1px solid #D9DBE9;
+    }
+
+    .cards__container .card:nth-child(3) {
+        grid-column: span 2;
+    }
+
+    .tool__container .tool__cards {
+        grid-template-columns: repeat(3, 1fr);
+        column-gap: 1.5rem;
+    }
+
+    .tool__container .tool__cards .card .btn {
+        border: 1px solid #D9DBE9;
+    }
+
+    .btn {
+        padding: 1rem 2rem;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .home__container {
+        display: flex;
+        flex-direction: row;
+        padding-block: 1rem 3rem;
+        overflow: hidden;
+        justify-content: end;
+        position: relative;
+    }
+
+    .home__container .home__content {
+        left: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        display: flex;
+        flex-direction: column;
+        row-gap: 2rem;
+        position: absolute;
+
+    }
+
+    .home__container .home__img {
+        width: 70%;
+        height: 100%;
+        transform: translateX(10%);
+        scale: initial;
+    }
+
+    .home__container .home__img img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+    }
+
+
+    .home__container .home__content .home__title {
+        font-size: 3.5rem;
+        text-align: start;
+        max-width: 65%;
+        line-height: 64px;
+    }
+
+    .home__container .home__content .buttons {
+        flex-direction: row;
+        column-gap: 1.5rem;
+        margin-inline: initial;
+    }
+
+    .btn {
+        padding: 1rem 3rem;
+    }
+
+    .cards__container {
+        grid-template-columns: repeat(3, 1fr);
+        border: none;
+    }
+
+    #cards {
+        border: 1px solid #D9DBE9;
+    }
+
+    .cards__container .card {
+        padding: 2rem;
+        padding-inline: 4rem 2rem;
+    }
+
+    .cards__container .card .card__img {
+        top: -2px;
+    }
+
+    .cards__container .card .card__img img {
+        width: 35px;
+        height: auto;
+    }
+
+    .cards__container .card:nth-child(1) {
+        border: none;
+    }
+
+    .cards__container .card:nth-child(2) {
+        border: none;
+        border-left: 1px solid #D9DBE9;
+        border-right: 1px solid #D9DBE9;
+    }
+
+    .cards__container .card:nth-child(3) {
+        grid-column: initial;
+    }
+
+    .tool__container .tool__head,
+    .places__container .places__head {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .tool__container .tool__head .tool__title,
+    .places__container .places__head .places__title {
+        font-size: 2.5rem;
+        line-height: 1.1;
+        max-width: 45%;
+    }
+
+    .tool__container .tool__head .tool__texts,
+    .places__container .places__head .places__texts {
+        width: 35%;
+        font-size: .9rem;
+    }
+
+    .places__slider {
+        height: 350px;
+        width: 100%;
+    }
+
+    .place__track {
+        width: calc(400px * 10);
+    }
+
+    .place__track div {
+        width: 400px;
+        height: 350px;
+        perspective: 250px;
+    }
+}
+
+@media screen and (min-width: 1152px) {
+    .home__container {
+        max-width: 1120px;
+        margin-inline: auto;
+    }
+
+    #home {
+        overflow: hidden;
+    }
+
+    .container {
+        margin-inline: auto;
+    }
+
+    .home__container {
+        overflow: initial;
+    }
+
+    .home__container .home__img {
+        width: 75%;
+        height: 100%;
+        transform: translateX(10%);
+    }
+
+    .nav__padding {
+        padding-block: 25px;
+        padding-left: 10.5rem;
+    }
+    .nav__padding-left {
+        padding-left: 10.5rem;
+    }
+
+    .nav__title i {
+        left: 130px;
+    }
 }
